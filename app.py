@@ -10,5 +10,11 @@ def home():
 def about():
     return render_template("about.html")
 
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def catch_all(path):
+    # returns a 200 (not a 404) with the following contents:
+    return render_template("error.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
