@@ -2,11 +2,7 @@ from flask import Flask, render_template,session, redirect, url_for, request
 
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
-
-@app.route("/index")
+@app.route("/")
 def home():
     return render_template("index.html")
 
