@@ -1,4 +1,5 @@
 from flask import Flask, render_template,session, redirect, url_for, request
+import random
 
 app = Flask(__name__)
 
@@ -17,6 +18,24 @@ def maps():
 @app.route("/about")
 def about():
     return render_template("about.html")
+
+@app.route('/roll')
+def roll():
+    random_number = random.randint(1, 6)
+    if(random_number==1):
+        random_number='one'
+    if(random_number==2):
+        random_number='two'
+    if(random_number==3):
+        random_number='three'
+    if(random_number==4):
+        random_number='four'
+    if(random_number==5):
+        random_number='five'
+    if(random_number==6):
+        random_number='six'
+        
+    return render_template('roll.html', random_number=random_number)
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
