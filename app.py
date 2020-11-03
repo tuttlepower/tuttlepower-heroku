@@ -19,8 +19,7 @@ def maps():
 def about():
     return render_template("about.html")
 
-@app.route('/roll')
-def roll():
+def dice_roll():
     random_number = random.randint(1, 6)
     if(random_number==1):
         random_number='one'
@@ -34,8 +33,14 @@ def roll():
         random_number='five'
     if(random_number==6):
         random_number='six'
-        
-    return render_template('roll.html', random_number=random_number)
+
+    return random_number
+
+@app.route('/roll')
+def roll():
+   
+
+    return render_template('roll.html', die1 = dice_roll(), die2 =dice_roll())
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
