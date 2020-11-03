@@ -4,8 +4,12 @@
 <head>
     <meta charset="utf-8">
     <link rel="icon"
-		href="https://raw.githubusercontent.com/tuttlepower/tuttlepower/master/Resources/Images/facelighting.png"
-		type="Head" sizes="16x16">
+        href="https://raw.githubusercontent.com/tuttlepower/tuttlepower/master/Resources/Images/facelighting.png"
+        type="Head" sizes="16x16">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -19,42 +23,30 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- My css file -->
-    <link rel="stylesheet" href="{{ url_for('static',    filename='css/template.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/template.css') }}">
 
     <!-- "Janson" Font -->
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-
-    <!-- Latest compiled and minified plotly.js JavaScript -->
-    <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
-
-    <!-- ChartJs-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
     <title>Flask Parent Template</title>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="{{ url_for('home') }}">Home</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navb">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navb">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('about') }}">About</a>
-                    </li>
-                
-        
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-primary my-2 my-sm-0" type="button">Search</button>
-                </form>
-            </div>
+        <nav class="navbar navbar-expand-sm navbar-custom sticky-top justify-content-center">
+            <ul class="navbar-nav ">
+                <div class="rounded-social-buttons">
+                    <a class="navbar-brand social-button dice" href="{{ url_for('home') }}" alt="Home">
+                        <i class="fas fa-dice"></i></a>
+                    <a class="navbar-brand social-button dice" href="{{ url_for('maps') }}" alt="Maps">
+                        <i class="fas fa-globe"></i></a>
+                    <a class="navbar-brand social-button dice" href="{{ url_for('graphs') }}" alt="Charts">
+                        <i class="fas fa-chart-line"></i></a>
+                    <a class="navbar-brand social-button dice" href="{{ url_for('about') }}" alt="About Me">
+                        <i class="fas fa-user-alt"></i></a>
+                </div>
+            </ul>
         </nav>
     </header>
     <br>
@@ -62,8 +54,6 @@
         {% block content %}
         {% endblock %}
     </div>
-
-
 </body>
 
 </html>
