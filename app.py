@@ -1,9 +1,7 @@
 from flask import Flask, render_template,session, redirect, url_for, request,jsonify
 import random
-import pandas as pd
-import json
-import map_data
-import flask_json
+
+
 
 app = Flask(__name__)
 
