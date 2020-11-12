@@ -48,14 +48,7 @@ def roll():
 def map(year):
     # 
     #need to add upper fence logic
-
     return render_template('map.html', year = year)
-
-@app.route('/data')
-def data():
-    json = map_data.getData(2016)
-    ########
-    return jsonify(json)
  
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
