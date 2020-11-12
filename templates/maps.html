@@ -11,16 +11,64 @@
     {% block content %}
 
     <h1>Maps</h1>
-    <p> This page will have maps and map links.</p>
-    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
-        LinkedIn, and the community web page for Flask itself.</p>
-
+    <br>
+    <div class="container">
+        <div id="accordion">
+          <div class="card">
+            <div class="card-header">
+              <a class="card-link" data-toggle="collapse" href="#elections">
+                Election Maps
+              </a>
+            </div>
+            <div id="elections" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="{{ url_for('map', year = 2016) }}" alt="Home">2016</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="{{ url_for('map', year = 2012) }}" alt="Home">2012</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="{{ url_for('map', year = 2008) }}" alt="Home">2008</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="{{ url_for('map', year = 2004) }}" alt="Home">2004</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="{{ url_for('map', year = 2000) }}" alt="Home">2000</a>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+              Collapsible Group Item #2
+            </a>
+            </div>
+            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                Collapsible Group Item #3
+              </a>
+            </div>
+            <div id="collapseThree" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
     {% endblock %}
 </body>
 

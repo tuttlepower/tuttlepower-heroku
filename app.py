@@ -1,5 +1,9 @@
-from flask import Flask, render_template,session, redirect, url_for, request
+from flask import Flask, render_template,session, redirect, url_for, request,jsonify
 import random
+import pandas as pd
+import json
+import map_data
+import flask_json
 
 app = Flask(__name__)
 
@@ -38,10 +42,21 @@ def dice_roll():
 
 @app.route('/roll')
 def roll():
-   
-
     return render_template('roll.html', die1 = dice_roll(), die2 =dice_roll())
 
+@app.route('/maps/election/<year>')
+def map(year):
+    # 
+    #need to add upper fence logic
+
+    return render_template('map.html', year = year)
+
+@app.route('/data')
+def data():
+    json = map_data.getData(2016)
+    ########
+    return jsonify(json)
+ 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def catch_all(path):
