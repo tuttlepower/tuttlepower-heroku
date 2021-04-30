@@ -1,7 +1,3 @@
 flask
 gunicorn
 flask_login
-secure_filename
-datetime
-os
-random
