@@ -3,7 +3,6 @@ import random
 import os
 from datetime import datetime
 from werkzeug.utils import secure_filename
-import flask_login
 
 UPLOAD_FOLDER = 'stuff'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
